@@ -6,8 +6,8 @@ import java.util.List;
 import br.com.erudio.service.CourseService;
 
 // System (Method) under test
-public class CourseBusiness  {
-	
+public class CourseBusiness {
+
 	// CourseService is a dependency
 	private CourseService service;
 
@@ -16,21 +16,32 @@ public class CourseBusiness  {
 		this.service = service;
 	}
 
-	public List<String> retrieveCoursesRelatedToSpring(String student){
+	public List<String> retrieveCoursesRelatedToSpring(String student) {
 		var filteredCourses = new ArrayList<String>();
-		if("Foo Bar".equals(student)) {
+		if ("Foo Bar".equals(student)) {
 			return filteredCourses;
 		}
-		
+
 		var allCourses = service.retrieveCourses(student);
-		
-		for(String course : allCourses) {
-			if(course.contains("Spring")) {
+
+		for (String course : allCourses) {
+			if (course.contains("Spring")) {
 				filteredCourses.add(course);
 			}
 		}
-		
+
 		return filteredCourses;
 	}
-	
+
+	public void deleteCoursesNotRelatedToSpring(String student) {
+
+		var allCourses = service.retrieveCourses(student);
+
+		for (String course : allCourses) {
+			if (!course.contains("Spring")) {
+				service.deleteCourse(course);
+			}
+		}
+	}
+
 }
