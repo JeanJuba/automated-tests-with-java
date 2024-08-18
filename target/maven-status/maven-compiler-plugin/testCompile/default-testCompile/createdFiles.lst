@@ -1,0 +1,9 @@
+br\com\erudio\business\CourseBusinessMockTest.class
+br\com\erudio\service\CourseServiceStub.class
+br\com\erudio\FooBarTest.class
+br\com\erudio\math\SimpleMathTest.class
+br\com\erudio\business\CourseBusinessMockWithBDDTest.class
+br\com\erudio\business\ListWithBDDTest.class
+br\com\erudio\business\CourseBusinessStubTest.class
+br\com\erudio\business\ListTest.class
+br\com\erudio\service\CourseServiceTest.class
